@@ -1,0 +1,244 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    color: beige;
+    /* background-color: #222a81a3; */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    box-sizing: border-box;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.content {
+    padding: 90px 0 0 0;
+}
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+ul {
+    padding-inline-start: 0;
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 50;
+}
+
+.header:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(..//img/tissue.jpg);
+    background-size: cover;
+    z-index: 2;
+    border-radius: 0 0 10% 10%;
+}
+
+.header__body {
+    position: relative;
+    display: flex;
+    height: 70px;
+    justify-content: center; 
+    align-items: center;
+}
+
+.header__list {
+    display: flex;
+    position: relative;
+    z-index: 2;
+}
+
+.header__list li {
+    list-style: none;
+}
+
+.header__link {
+    margin-left: 30px;
+    text-decoration: none;
+    color: rgb(255, 255, 255, 71%);
+    font-size: large;
+    font-weight: bold;
+    transition: 0.3s;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.header__link:hover {
+    background-color: rgba(222, 222, 222, 0.3);
+    cursor: pointer;
+    color: #fff;
+}
+
+.header__burger {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    body.lock {
+        overflow: hidden;
+    }
+    .content {
+        padding: 60px 0 0 0;
+    }
+    .header__body {
+        height: 50px;
+        justify-content: flex-start;
+    }
+
+    .header:before {
+        border-radius: 0%;
+    }
+
+    .header__burger {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 20px;
+        z-index: 3;
+    }
+
+    .header__burger span {
+        position: absolute;
+        background-color: #fff;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        top: 9px;
+        transition: all 0.3s ease 0s;
+    }
+
+    .header__burger:before,
+    .header__burger:after {
+        content: "";
+        background-color: #fff;
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        left: 0;
+        transition: all 0.3s ease 0s;
+    }
+
+    .header__burger:before {
+        top: 0;
+    }
+
+    .header__burger:after {
+        bottom: 0;
+    }
+
+    .header__burger.active span {
+        transform: scale(0);
+    }
+
+    .header__burger.active:before {
+        transform: rotate(45deg);
+        top: 9px;
+    }
+
+    .header__burger.active:after {
+        transform: rotate(-45deg);
+        bottom: 9px;
+    }
+
+    .header__menu {
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.758);
+        padding: 50px 0 0 0;
+        transition: all 0.3s ease 0s;
+        overflow: auto;
+        border-radius: 0 0 15px 15px;
+    }
+
+    .header__menu.active {
+        top: 0;
+    }
+
+    ul {
+        padding-inline-start: 0;
+    }
+
+    .header__list {
+        display: block;
+    }
+
+    .header__list li {
+        margin: 0 0 20px 0;
+    }
+}
+
+h2 {
+    text-align: center;
+    font-size: 18px;
+}
+
+.card {
+    position: relative;
+    display: inline-block;
+    width: 320px;
+    height: 180px;
+    background-size: cover;
+    margin: 10px;
+    border-radius: 0 20px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.card:hover .download {
+    right: 20px;
+}
+
+#cards {
+    text-align: center;
+}
+
+.download {
+    transition: all  0.5s;
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #006633;
+    position: absolute;
+    right: -200px;
+    bottom: 20px;
+    color: aliceblue;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.download:hover {
+    background-color: #2fa469;
+}
+
+section {
+    margin: 0 5%;
+}
+
